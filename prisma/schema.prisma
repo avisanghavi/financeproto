@@ -1,0 +1,451 @@
+generator client {
+  provider = "prisma-client"
+  output   = "./generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// ============================================
+// CORE ENTITIES
+// ============================================
+
+model Company {
+  id                String   @id @default(cuid())
+  name              String
+  legalName         String?
+  incorporationDate DateTime
+  incorporationState String  @default("DE")
+  authorizedShares  Int      @default(10000000)
+  parValue          Decimal  @default(0.0001) @db.Decimal(10, 6)
+  
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Relations
+  stakeholders     Stakeholder[]
+  shareClasses     ShareClass[]
+  equityPlans      EquityPlan[]
+  shareCertificates ShareCertificate[]
+  optionGrants     OptionGrant[]
+  convertibles     Convertible[]
+  auditLogs        AuditLog[]
+}
+
+model Stakeholder {
+  id        String          @id @default(cuid())
+  companyId String
+  name      String
+  email     String
+  type      StakeholderType
+  title     String?
+  
+  // Auth fields for stakeholder portal
+  emailVerified DateTime?
+  passwordHash  String?
+  
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Relations
+  company           Company            @relation(fields: [companyId], references: [id], onDelete: Cascade)
+  shareCertificates ShareCertificate[]
+  optionGrants      OptionGrant[]
+  convertibles      Convertible[]
+  sessions          StakeholderSession[]
+
+  @@unique([companyId, email])
+  @@index([companyId])
+}
+
+model StakeholderSession {
+  id            String      @id @default(cuid())
+  stakeholderId String
+  token         String      @unique
+  expiresAt     DateTime
+  createdAt     DateTime    @default(now())
+
+  stakeholder Stakeholder @relation(fields: [stakeholderId], references: [id], onDelete: Cascade)
+
+  @@index([stakeholderId])
+}
+
+enum StakeholderType {
+  FOUNDER
+  EMPLOYEE
+  INVESTOR
+  ADVISOR
+  BOARD_MEMBER
+  CONSULTANT
+}
+
+// ============================================
+// SHARE CLASSES
+// ============================================
+
+model ShareClass {
+  id                  String         @id @default(cuid())
+  companyId           String
+  name                String
+  type                ShareClassType
+  authorizedShares    Int
+  pricePerShare       Decimal        @db.Decimal(10, 4)
+  conversionRatio     Decimal        @default(1) @db.Decimal(10, 6)
+  liquidationPreference Decimal?     @db.Decimal(10, 4)
+  liquidationMultiple Decimal?       @default(1) @db.Decimal(10, 4)
+  participatingPreferred Boolean     @default(false)
+  seniority           Int            @default(1)
+  
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Relations
+  company           Company            @relation(fields: [companyId], references: [id], onDelete: Cascade)
+  shareCertificates ShareCertificate[]
+  convertibles      Convertible[]      @relation("ConvertsToShareClass")
+
+  @@unique([companyId, name])
+  @@index([companyId])
+}
+
+enum ShareClassType {
+  COMMON
+  PREFERRED
+}
+
+// ============================================
+// EQUITY PLANS
+// ============================================
+
+model EquityPlan {
+  id               String   @id @default(cuid())
+  companyId        String
+  name             String
+  totalPoolSize    Int
+  availableShares  Int
+  boardApprovalDate DateTime
+  expirationDate   DateTime?
+  
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Relations
+  company      Company       @relation(fields: [companyId], references: [id], onDelete: Cascade)
+  optionGrants OptionGrant[]
+
+  @@unique([companyId, name])
+  @@index([companyId])
+}
+
+// ============================================
+// SHARE CERTIFICATES
+// ============================================
+
+model ShareCertificate {
+  id              String                 @id @default(cuid())
+  companyId       String
+  securityId      String                 @unique
+  stakeholderId   String
+  shareClassId    String
+  quantity        Int
+  pricePerShare   Decimal                @db.Decimal(10, 4)
+  cashPaid        Decimal                @db.Decimal(12, 2)
+  costBasis       Decimal                @db.Decimal(12, 2)
+  acquisitionDate DateTime
+  issueDate       DateTime               @default(now())
+  originalIssueDate DateTime?
+  status          CertificateStatus      @default(OUTSTANDING)
+  
+  // Document references (URLs)
+  certificateImageUrl String?
+  optionAgreementUrl  String?
+  exerciseAgreementUrl String?
+  
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Relations
+  company       Company          @relation(fields: [companyId], references: [id], onDelete: Cascade)
+  stakeholder   Stakeholder      @relation(fields: [stakeholderId], references: [id], onDelete: Restrict)
+  shareClass    ShareClass       @relation(fields: [shareClassId], references: [id], onDelete: Restrict)
+  optionExercise OptionExercise? @relation("ExerciseCertificate")
+
+  @@index([companyId])
+  @@index([stakeholderId])
+  @@index([shareClassId])
+}
+
+enum CertificateStatus {
+  OUTSTANDING
+  CANCELLED
+  TRANSFERRED
+  REPURCHASED
+}
+
+// ============================================
+// OPTION GRANTS
+// ============================================
+
+model OptionGrant {
+  id              String       @id @default(cuid())
+  companyId       String
+  securityId      String       @unique
+  stakeholderId   String
+  equityPlanId    String
+  originalQuantity Int
+  expiredQuantity Int          @default(0)
+  exercisePrice   Decimal      @db.Decimal(10, 4)
+  type            OptionType
+  grantDate       DateTime
+  boardApprovalDate DateTime?
+  terminationDate DateTime?
+  expirationDate  DateTime
+  grantReason     String?
+  status          OptionStatus @default(ACTIVE)
+  
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Relations
+  company         Company          @relation(fields: [companyId], references: [id], onDelete: Cascade)
+  stakeholder     Stakeholder      @relation(fields: [stakeholderId], references: [id], onDelete: Restrict)
+  equityPlan      EquityPlan       @relation(fields: [equityPlanId], references: [id], onDelete: Restrict)
+  vestingSchedule VestingSchedule?
+  exercises       OptionExercise[]
+  exercisePeriods PostTerminationExercisePeriod[]
+
+  @@index([companyId])
+  @@index([stakeholderId])
+  @@index([equityPlanId])
+}
+
+enum OptionType {
+  ISO
+  NSO
+}
+
+enum OptionStatus {
+  ACTIVE
+  PARTIALLY_EXERCISED
+  FULLY_EXERCISED
+  EXPIRED
+  CANCELLED
+  TERMINATED
+}
+
+// ============================================
+// VESTING
+// ============================================
+
+model VestingSchedule {
+  id              String       @id @default(cuid())
+  optionGrantId   String       @unique
+  scheduleName    String?
+  vestingStartDate DateTime
+  cliffMonths     Int          @default(12)
+  cliffPercentage Decimal      @default(0.25) @db.Decimal(5, 4)
+  totalPeriods    Int          @default(48)
+  periodUnit      PeriodUnit   @default(MONTHLY)
+  accelerationClause String?
+  
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Relations
+  optionGrant    OptionGrant     @relation(fields: [optionGrantId], references: [id], onDelete: Cascade)
+  vestingPeriods VestingPeriod[]
+}
+
+enum PeriodUnit {
+  MONTHLY
+  QUARTERLY
+  ANNUALLY
+}
+
+model VestingPeriod {
+  id                String   @id @default(cuid())
+  vestingScheduleId String
+  periodNumber      Int
+  vestingDate       DateTime
+  sharesVested      Int
+  cumulativeVested  Int
+  
+  createdAt DateTime @default(now())
+
+  // Relations
+  vestingSchedule VestingSchedule @relation(fields: [vestingScheduleId], references: [id], onDelete: Cascade)
+
+  @@unique([vestingScheduleId, periodNumber])
+  @@index([vestingScheduleId])
+}
+
+model PostTerminationExercisePeriod {
+  id            String          @id @default(cuid())
+  optionGrantId String
+  terminationType TerminationType
+  duration      Int
+  durationUnit  DurationUnit    @default(MONTHS)
+  
+  optionGrant OptionGrant @relation(fields: [optionGrantId], references: [id], onDelete: Cascade)
+
+  @@unique([optionGrantId, terminationType])
+}
+
+enum TerminationType {
+  VOLUNTARY
+  INVOLUNTARY
+  FOR_CAUSE
+  DEATH
+  DISABILITY
+  RETIREMENT
+}
+
+enum DurationUnit {
+  DAYS
+  MONTHS
+  YEARS
+}
+
+// ============================================
+// OPTION EXERCISES
+// ============================================
+
+model OptionExercise {
+  id                  String        @id @default(cuid())
+  optionGrantId       String
+  shareCertificateId  String        @unique
+  sharesExercised     Int
+  exercisePrice       Decimal       @db.Decimal(10, 4)
+  totalCost           Decimal       @db.Decimal(12, 2)
+  exerciseDate        DateTime
+  fmvAtExercise       Decimal       @db.Decimal(10, 4)
+  paymentMethod       PaymentMethod
+  approver            String?
+  approvedAt          DateTime?
+  status              ExerciseStatus @default(PENDING)
+  
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Relations
+  optionGrant      OptionGrant      @relation(fields: [optionGrantId], references: [id], onDelete: Restrict)
+  shareCertificate ShareCertificate @relation("ExerciseCertificate", fields: [shareCertificateId], references: [id], onDelete: Restrict)
+
+  @@index([optionGrantId])
+}
+
+enum PaymentMethod {
+  CASH
+  CASHLESS
+  MIXED
+  PROMISSORY_NOTE
+}
+
+enum ExerciseStatus {
+  PENDING
+  APPROVED
+  COMPLETED
+  REJECTED
+}
+
+// ============================================
+// CONVERTIBLES (SAFEs & Convertible Notes)
+// ============================================
+
+model Convertible {
+  id                  String           @id @default(cuid())
+  companyId           String
+  securityId          String           @unique
+  stakeholderId       String
+  type                ConvertibleType
+  principal           Decimal          @db.Decimal(12, 2)
+  interestRate        Decimal?         @db.Decimal(5, 4)
+  interestStartDate   DateTime?
+  valuationCap        Decimal?         @db.Decimal(14, 2)
+  valuationCapType    CapType?
+  discount            Decimal?         @db.Decimal(5, 4)
+  convertsToClassId   String?
+  liquidityPriority   Int?
+  cashoutMultiplier   Decimal?         @db.Decimal(5, 2)
+  issueDate           DateTime
+  boardApprovalDate   DateTime?
+  conversionPriceBasis String[]        @default([])
+  status              ConvertibleStatus @default(OUTSTANDING)
+  
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Relations
+  company        Company     @relation(fields: [companyId], references: [id], onDelete: Cascade)
+  stakeholder    Stakeholder @relation(fields: [stakeholderId], references: [id], onDelete: Restrict)
+  convertsToClass ShareClass? @relation("ConvertsToShareClass", fields: [convertsToClassId], references: [id])
+
+  @@index([companyId])
+  @@index([stakeholderId])
+}
+
+enum ConvertibleType {
+  SAFE
+  CONVERTIBLE_NOTE
+}
+
+enum CapType {
+  PRE_MONEY
+  POST_MONEY
+}
+
+enum ConvertibleStatus {
+  OUTSTANDING
+  CONVERTED
+  CANCELLED
+  REPAID
+}
+
+// ============================================
+// AUDIT LOG
+// ============================================
+
+model AuditLog {
+  id          String   @id @default(cuid())
+  companyId   String
+  userId      String?
+  userEmail   String?
+  action      String
+  entityType  String
+  entityId    String
+  before      Json?
+  after       Json?
+  ipAddress   String?
+  userAgent   String?
+  
+  createdAt DateTime @default(now())
+
+  // Relations
+  company Company @relation(fields: [companyId], references: [id], onDelete: Cascade)
+
+  @@index([companyId])
+  @@index([entityType, entityId])
+  @@index([createdAt])
+}
+
+// ============================================
+// ADMIN USERS
+// ============================================
+
+model AdminUser {
+  id            String    @id @default(cuid())
+  email         String    @unique
+  name          String?
+  passwordHash  String
+  role          AdminRole @default(ADMIN)
+  
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+enum AdminRole {
+  SUPER_ADMIN
+  ADMIN
+  VIEWER
+}

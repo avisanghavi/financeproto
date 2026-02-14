@@ -1,0 +1,35 @@
+{
+  "node": {
+    "601be3b9000de654fb9711b8f2ca443b2be23a7f00": {
+      "workers": {
+        "app/(admin)/convertibles/new/page": {
+          "moduleId": "[project]/.next-internal/server/app/(admin)/convertibles/new/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/(admin)/convertibles/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "createConvertible",
+          "filename": "src/app/(admin)/convertibles/actions.ts"
+        }
+      },
+      "layer": {
+        "app/(admin)/convertibles/new/page": "action-browser"
+      },
+      "exportedName": "createConvertible",
+      "filename": "src/app/(admin)/convertibles/actions.ts"
+    },
+    "701e319a3ae03db5fc29ea320ea722302c397b1237": {
+      "workers": {
+        "app/(admin)/convertibles/new/page": {
+          "moduleId": "[project]/.next-internal/server/app/(admin)/convertibles/new/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/(admin)/convertibles/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "updateConvertible",
+          "filename": "src/app/(admin)/convertibles/actions.ts"
+        }
+      },
+      "layer": {
+        "app/(admin)/convertibles/new/page": "action-browser"
+      },
+      "exportedName": "updateConvertible",
+      "filename": "src/app/(admin)/convertibles/actions.ts"
+    }
+  },
+  "edge": {}
+}

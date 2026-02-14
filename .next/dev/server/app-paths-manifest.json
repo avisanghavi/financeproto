@@ -1,0 +1,11 @@
+{
+  "/(admin)/cap-table/page": "app/(admin)/cap-table/page.js",
+  "/(admin)/certificates/new/page": "app/(admin)/certificates/new/page.js",
+  "/(admin)/certificates/page": "app/(admin)/certificates/page.js",
+  "/(admin)/convertibles/page": "app/(admin)/convertibles/page.js",
+  "/(admin)/options/page": "app/(admin)/options/page.js",
+  "/(admin)/page": "app/(admin)/page.js",
+  "/(admin)/settings/page": "app/(admin)/settings/page.js",
+  "/(admin)/stakeholders/page": "app/(admin)/stakeholders/page.js",
+  "/_not-found/page": "app/_not-found/page.js"
+}

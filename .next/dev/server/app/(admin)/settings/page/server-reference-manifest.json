@@ -1,0 +1,95 @@
+{
+  "node": {
+    "60fa2fcd7ec9082a1fd442e3b93ce6480a6980de0f": {
+      "workers": {
+        "app/(admin)/settings/page": {
+          "moduleId": "[project]/.next-internal/server/app/(admin)/settings/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/(admin)/settings/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "createCompany",
+          "filename": "src/app/(admin)/settings/actions.ts"
+        }
+      },
+      "layer": {
+        "app/(admin)/settings/page": "action-browser"
+      },
+      "exportedName": "createCompany",
+      "filename": "src/app/(admin)/settings/actions.ts"
+    },
+    "60ca32bd5031c3e409cc7c740abcb21c05456b2a4b": {
+      "workers": {
+        "app/(admin)/settings/page": {
+          "moduleId": "[project]/.next-internal/server/app/(admin)/settings/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/(admin)/settings/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "updateCompany",
+          "filename": "src/app/(admin)/settings/actions.ts"
+        }
+      },
+      "layer": {
+        "app/(admin)/settings/page": "action-browser"
+      },
+      "exportedName": "updateCompany",
+      "filename": "src/app/(admin)/settings/actions.ts"
+    },
+    "6085d2601f22c78b6db5a7c2121b4c253471c0e404": {
+      "workers": {
+        "app/(admin)/settings/page": {
+          "moduleId": "[project]/.next-internal/server/app/(admin)/settings/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/(admin)/settings/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "createShareClass",
+          "filename": "src/app/(admin)/settings/actions.ts"
+        }
+      },
+      "layer": {
+        "app/(admin)/settings/page": "action-browser"
+      },
+      "exportedName": "createShareClass",
+      "filename": "src/app/(admin)/settings/actions.ts"
+    },
+    "4031546e993b1d8b57f4bf4f99b03f51a3e6498649": {
+      "workers": {
+        "app/(admin)/settings/page": {
+          "moduleId": "[project]/.next-internal/server/app/(admin)/settings/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/(admin)/settings/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "deleteShareClass",
+          "filename": "src/app/(admin)/settings/actions.ts"
+        }
+      },
+      "layer": {
+        "app/(admin)/settings/page": "action-browser"
+      },
+      "exportedName": "deleteShareClass",
+      "filename": "src/app/(admin)/settings/actions.ts"
+    },
+    "606d28788ae77f3bd8c243d8fb49c039d3973ac26b": {
+      "workers": {
+        "app/(admin)/settings/page": {
+          "moduleId": "[project]/.next-internal/server/app/(admin)/settings/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/(admin)/settings/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "createEquityPlan",
+          "filename": "src/app/(admin)/settings/actions.ts"
+        }
+      },
+      "layer": {
+        "app/(admin)/settings/page": "action-browser"
+      },
+      "exportedName": "createEquityPlan",
+      "filename": "src/app/(admin)/settings/actions.ts"
+    },
+    "403454b6924c676099b95a02fe7cdcc5ee743f2a7c": {
+      "workers": {
+        "app/(admin)/settings/page": {
+          "moduleId": "[project]/.next-internal/server/app/(admin)/settings/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/(admin)/settings/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "deleteEquityPlan",
+          "filename": "src/app/(admin)/settings/actions.ts"
+        }
+      },
+      "layer": {
+        "app/(admin)/settings/page": "action-browser"
+      },
+      "exportedName": "deleteEquityPlan",
+      "filename": "src/app/(admin)/settings/actions.ts"
+    }
+  },
+  "edge": {}
+}

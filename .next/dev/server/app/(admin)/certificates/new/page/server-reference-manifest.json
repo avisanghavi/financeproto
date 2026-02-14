@@ -1,0 +1,35 @@
+{
+  "node": {
+    "6089eb637b9f35111abd89de185e1dabd3abb17559": {
+      "workers": {
+        "app/(admin)/certificates/new/page": {
+          "moduleId": "[project]/.next-internal/server/app/(admin)/certificates/new/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/(admin)/certificates/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "createCertificate",
+          "filename": "src/app/(admin)/certificates/actions.ts"
+        }
+      },
+      "layer": {
+        "app/(admin)/certificates/new/page": "action-browser"
+      },
+      "exportedName": "createCertificate",
+      "filename": "src/app/(admin)/certificates/actions.ts"
+    },
+    "7090bb40905a5b3c320768549f29e12830de9b9baa": {
+      "workers": {
+        "app/(admin)/certificates/new/page": {
+          "moduleId": "[project]/.next-internal/server/app/(admin)/certificates/new/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/(admin)/certificates/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "updateCertificate",
+          "filename": "src/app/(admin)/certificates/actions.ts"
+        }
+      },
+      "layer": {
+        "app/(admin)/certificates/new/page": "action-browser"
+      },
+      "exportedName": "updateCertificate",
+      "filename": "src/app/(admin)/certificates/actions.ts"
+    }
+  },
+  "edge": {}
+}
