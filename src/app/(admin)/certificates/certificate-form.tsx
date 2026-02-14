@@ -7,7 +7,7 @@ import { Label } from "@/components/ui/label";
 import { Select } from "@/components/ui/select";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { createCertificate, updateCertificate, type CertificateFormState } from "./actions";
-import type { Stakeholder, ShareClass, ShareCertificate } from "../../../../prisma/generated/prisma";
+import type { Stakeholder, ShareClass, ShareCertificate } from "@prisma/client";
 import { User, FileText, Building2 } from "lucide-react";
 
 interface CertificateFormProps {

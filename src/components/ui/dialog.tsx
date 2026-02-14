@@ -29,12 +29,22 @@ const Dialog = ({ open: controlledOpen, onOpenChange, children }: DialogProps) =
   );
 };
 
+interface DialogTriggerProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  asChild?: boolean;
+}
+
 const DialogTrigger = React.forwardRef<
   HTMLButtonElement,
-  React.ButtonHTMLAttributes<HTMLButtonElement>
->(({ children, ...props }, ref) => {
+  DialogTriggerProps
+>(({ children, asChild, ...props }, ref) => {
   const context = React.useContext(DialogContext);
   if (!context) throw new Error("DialogTrigger must be used within Dialog");
+
+  if (asChild && React.isValidElement(children)) {
+    return React.cloneElement(children as React.ReactElement<{ onClick?: () => void }>, {
+      onClick: () => context.setOpen(true),
+    });
+  }
 
   return (
     <button

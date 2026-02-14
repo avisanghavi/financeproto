@@ -8,7 +8,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { createCompany, updateCompany, type CompanyFormState } from "./actions";
 import { toast } from "sonner";
 
-interface Company {
+export interface Company {
   id: string;
   name: string;
   legalName: string | null;

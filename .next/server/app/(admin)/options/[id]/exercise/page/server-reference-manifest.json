@@ -1,0 +1,20 @@
+{
+  "node": {
+    "604fcde696349a20ca4fc853a4574eebb149fe5099": {
+      "workers": {
+        "app/(admin)/options/[id]/exercise/page": {
+          "moduleId": 51711,
+          "async": true,
+          "exportedName": "exerciseOptions",
+          "filename": "src/app/(admin)/options/actions.ts"
+        }
+      },
+      "layer": {
+        "app/(admin)/options/[id]/exercise/page": "action-browser"
+      },
+      "exportedName": "exerciseOptions",
+      "filename": "src/app/(admin)/options/actions.ts"
+    }
+  },
+  "edge": {}
+}

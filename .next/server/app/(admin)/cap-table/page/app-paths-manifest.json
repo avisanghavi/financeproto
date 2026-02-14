@@ -1,0 +1,3 @@
+{
+  "/(admin)/cap-table/page": "app/(admin)/cap-table/page.js"
+}

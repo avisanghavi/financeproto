@@ -1,0 +1,95 @@
+{
+  "node": {
+    "60b1ce4db9bde9743708da32f4cf4c6b122b2c1611": {
+      "workers": {
+        "app/(admin)/settings/page": {
+          "moduleId": 7188,
+          "async": true,
+          "exportedName": "createCompany",
+          "filename": "src/app/(admin)/settings/actions.ts"
+        }
+      },
+      "layer": {
+        "app/(admin)/settings/page": "action-browser"
+      },
+      "exportedName": "createCompany",
+      "filename": "src/app/(admin)/settings/actions.ts"
+    },
+    "606889f43c5f260c2a733455bb8f871e9148c117bb": {
+      "workers": {
+        "app/(admin)/settings/page": {
+          "moduleId": 7188,
+          "async": true,
+          "exportedName": "updateCompany",
+          "filename": "src/app/(admin)/settings/actions.ts"
+        }
+      },
+      "layer": {
+        "app/(admin)/settings/page": "action-browser"
+      },
+      "exportedName": "updateCompany",
+      "filename": "src/app/(admin)/settings/actions.ts"
+    },
+    "60058a6e723404676ad799953bb5ba1d30c72ceefb": {
+      "workers": {
+        "app/(admin)/settings/page": {
+          "moduleId": 7188,
+          "async": true,
+          "exportedName": "createShareClass",
+          "filename": "src/app/(admin)/settings/actions.ts"
+        }
+      },
+      "layer": {
+        "app/(admin)/settings/page": "action-browser"
+      },
+      "exportedName": "createShareClass",
+      "filename": "src/app/(admin)/settings/actions.ts"
+    },
+    "40d0788548af97c425a00c116775696b4b549ac5fa": {
+      "workers": {
+        "app/(admin)/settings/page": {
+          "moduleId": 7188,
+          "async": true,
+          "exportedName": "deleteShareClass",
+          "filename": "src/app/(admin)/settings/actions.ts"
+        }
+      },
+      "layer": {
+        "app/(admin)/settings/page": "action-browser"
+      },
+      "exportedName": "deleteShareClass",
+      "filename": "src/app/(admin)/settings/actions.ts"
+    },
+    "600983f5a7b451e8cfbe74dc1fb45f7af3f8527515": {
+      "workers": {
+        "app/(admin)/settings/page": {
+          "moduleId": 7188,
+          "async": true,
+          "exportedName": "createEquityPlan",
+          "filename": "src/app/(admin)/settings/actions.ts"
+        }
+      },
+      "layer": {
+        "app/(admin)/settings/page": "action-browser"
+      },
+      "exportedName": "createEquityPlan",
+      "filename": "src/app/(admin)/settings/actions.ts"
+    },
+    "4004d1d0caa15e397d59be83308f954a9edd1ea4bd": {
+      "workers": {
+        "app/(admin)/settings/page": {
+          "moduleId": 7188,
+          "async": true,
+          "exportedName": "deleteEquityPlan",
+          "filename": "src/app/(admin)/settings/actions.ts"
+        }
+      },
+      "layer": {
+        "app/(admin)/settings/page": "action-browser"
+      },
+      "exportedName": "deleteEquityPlan",
+      "filename": "src/app/(admin)/settings/actions.ts"
+    }
+  },
+  "edge": {}
+}

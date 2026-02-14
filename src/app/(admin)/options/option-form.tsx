@@ -8,7 +8,7 @@ import { Select } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { createOptionGrant, type OptionGrantFormState } from "./actions";
-import type { Stakeholder, EquityPlan } from "../../../../prisma/generated/prisma";
+import type { Stakeholder, EquityPlan } from "@prisma/client";
 import { User, Receipt, Building2, Calendar } from "lucide-react";
 
 interface OptionFormProps {

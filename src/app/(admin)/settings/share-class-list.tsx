@@ -18,7 +18,7 @@ import { formatNumber, formatCurrency } from "@/lib/utils";
 import { Plus, Trash2 } from "lucide-react";
 import { toast } from "sonner";
 
-interface ShareClass {
+export interface SerializedShareClass {
   id: string;
   name: string;
   type: string;
@@ -28,7 +28,7 @@ interface ShareClass {
 }
 
 interface ShareClassListProps {
-  shareClasses: ShareClass[];
+  shareClasses: SerializedShareClass[];
   companyId: string;
 }
 

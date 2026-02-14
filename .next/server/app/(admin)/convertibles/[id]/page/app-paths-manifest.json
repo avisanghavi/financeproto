@@ -1,0 +1,3 @@
+{
+  "/(admin)/convertibles/[id]/page": "app/(admin)/convertibles/[id]/page.js"
+}

@@ -1,0 +1,20 @@
+{
+  "node": {
+    "60044db7427d22521822256a6d3a656c9b2b5799f0": {
+      "workers": {
+        "app/(admin)/options/new/page": {
+          "moduleId": 12584,
+          "async": true,
+          "exportedName": "createOptionGrant",
+          "filename": "src/app/(admin)/options/actions.ts"
+        }
+      },
+      "layer": {
+        "app/(admin)/options/new/page": "action-browser"
+      },
+      "exportedName": "createOptionGrant",
+      "filename": "src/app/(admin)/options/actions.ts"
+    }
+  },
+  "edge": {}
+}

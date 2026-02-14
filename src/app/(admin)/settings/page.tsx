@@ -1,8 +1,8 @@
 import { prisma } from "@/lib/prisma";
 import { serialize } from "@/lib/utils";
-import { CompanyForm } from "./company-form";
-import { ShareClassList } from "./share-class-list";
-import { EquityPlanList } from "./equity-plan-list";
+import { CompanyForm, type Company } from "./company-form";
+import { ShareClassList, type SerializedShareClass } from "./share-class-list";
+import { EquityPlanList, type SerializedEquityPlan } from "./equity-plan-list";
 import { Building2, Layers, Target } from "lucide-react";
 
 async function getSettingsData() {
@@ -38,7 +38,7 @@ export default async function SettingsPage() {
           <Building2 className="h-5 w-5 text-muted-foreground" />
           <h2 className="text-xl font-semibold">Company Information</h2>
         </div>
-        <CompanyForm company={company ? serialize(company) : null} />
+        <CompanyForm company={company ? serialize(company) as unknown as Company : null} />
       </section>
 
       {company && (
@@ -50,7 +50,7 @@ export default async function SettingsPage() {
               <h2 className="text-xl font-semibold">Share Classes</h2>
             </div>
             <ShareClassList 
-              shareClasses={serialize(company.shareClasses)} 
+              shareClasses={serialize(company.shareClasses) as unknown as SerializedShareClass[]} 
               companyId={company.id}
             />
           </section>
@@ -62,7 +62,7 @@ export default async function SettingsPage() {
               <h2 className="text-xl font-semibold">Equity Plans</h2>
             </div>
             <EquityPlanList 
-              equityPlans={serialize(company.equityPlans)} 
+              equityPlans={serialize(company.equityPlans) as unknown as SerializedEquityPlan[]} 
               companyId={company.id}
             />
           </section>

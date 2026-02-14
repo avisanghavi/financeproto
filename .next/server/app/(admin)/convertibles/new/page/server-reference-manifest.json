@@ -1,0 +1,35 @@
+{
+  "node": {
+    "60421a5fce6afd1b5d5a69344381f4971bb692c5f6": {
+      "workers": {
+        "app/(admin)/convertibles/new/page": {
+          "moduleId": 15778,
+          "async": true,
+          "exportedName": "createConvertible",
+          "filename": "src/app/(admin)/convertibles/actions.ts"
+        }
+      },
+      "layer": {
+        "app/(admin)/convertibles/new/page": "action-browser"
+      },
+      "exportedName": "createConvertible",
+      "filename": "src/app/(admin)/convertibles/actions.ts"
+    },
+    "70fdc3fd8cbed3b0c39a338fa259549966cbbb3b45": {
+      "workers": {
+        "app/(admin)/convertibles/new/page": {
+          "moduleId": 15778,
+          "async": true,
+          "exportedName": "updateConvertible",
+          "filename": "src/app/(admin)/convertibles/actions.ts"
+        }
+      },
+      "layer": {
+        "app/(admin)/convertibles/new/page": "action-browser"
+      },
+      "exportedName": "updateConvertible",
+      "filename": "src/app/(admin)/convertibles/actions.ts"
+    }
+  },
+  "edge": {}
+}

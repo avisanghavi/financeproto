@@ -7,7 +7,7 @@ import { Label } from "@/components/ui/label";
 import { Select } from "@/components/ui/select";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { createConvertible, updateConvertible, type ConvertibleFormState } from "./actions";
-import type { Stakeholder, ShareClass, Convertible } from "../../../../prisma/generated/prisma";
+import type { Stakeholder, ShareClass, Convertible } from "@prisma/client";
 import { User, Building2, DollarSign, FileText } from "lucide-react";
 
 interface ConvertibleFormProps {

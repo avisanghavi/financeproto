@@ -17,7 +17,7 @@ import { formatNumber, formatDate } from "@/lib/utils";
 import { Plus, Trash2 } from "lucide-react";
 import { toast } from "sonner";
 
-interface EquityPlan {
+export interface SerializedEquityPlan {
   id: string;
   name: string;
   totalPoolSize: number;
@@ -27,7 +27,7 @@ interface EquityPlan {
 }
 
 interface EquityPlanListProps {
-  equityPlans: EquityPlan[];
+  equityPlans: SerializedEquityPlan[];
   companyId: string;
 }
 

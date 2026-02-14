@@ -15,7 +15,7 @@ import type {
   Convertible,
   EquityPlan,
   Stakeholder,
-} from "../../prisma/generated/prisma";
+} from "@prisma/client";
 
 // ============================================
 // TYPES

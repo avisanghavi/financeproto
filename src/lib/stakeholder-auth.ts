@@ -1,6 +1,6 @@
 import { cookies } from "next/headers";
 import { prisma } from "./prisma";
-import type { Stakeholder } from "../../prisma/generated/prisma";
+import type { Stakeholder } from "@prisma/client";
 
 export async function getStakeholderFromSession(): Promise<Stakeholder | null> {
   const cookieStore = await cookies();

@@ -1,6 +1,6 @@
 import { prisma } from "./prisma";
 import { generateVestingPeriods, type VestingPeriodData } from "./calculations";
-import type { OptionGrant, VestingSchedule, VestingPeriod } from "../../prisma/generated/prisma";
+import type { OptionGrant, VestingSchedule, VestingPeriod } from "@prisma/client";
 
 /**
  * Creates VestingPeriod records in the database for an option grant.

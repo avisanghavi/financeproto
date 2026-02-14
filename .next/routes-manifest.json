@@ -1,0 +1,195 @@
+{
+  "version": 3,
+  "pages404": true,
+  "appType": "app",
+  "caseSensitive": false,
+  "basePath": "",
+  "redirects": [
+    {
+      "source": "/:path+/",
+      "destination": "/:path+",
+      "internal": true,
+      "priority": true,
+      "statusCode": 308,
+      "regex": "^(?:/((?:[^/]+?)(?:/(?:[^/]+?))*))/$"
+    }
+  ],
+  "headers": [],
+  "rewrites": {
+    "beforeFiles": [],
+    "afterFiles": [],
+    "fallback": []
+  },
+  "dynamicRoutes": [
+    {
+      "page": "/certificates/[id]",
+      "regex": "^/certificates/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPid": "nxtPid"
+      },
+      "namedRegex": "^/certificates/(?<nxtPid>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/certificates/[id]/edit",
+      "regex": "^/certificates/([^/]+?)/edit(?:/)?$",
+      "routeKeys": {
+        "nxtPid": "nxtPid"
+      },
+      "namedRegex": "^/certificates/(?<nxtPid>[^/]+?)/edit(?:/)?$"
+    },
+    {
+      "page": "/convertibles/[id]",
+      "regex": "^/convertibles/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPid": "nxtPid"
+      },
+      "namedRegex": "^/convertibles/(?<nxtPid>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/exercises/[grantId]",
+      "regex": "^/exercises/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPgrantId": "nxtPgrantId"
+      },
+      "namedRegex": "^/exercises/(?<nxtPgrantId>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/options/[id]",
+      "regex": "^/options/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPid": "nxtPid"
+      },
+      "namedRegex": "^/options/(?<nxtPid>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/options/[id]/exercise",
+      "regex": "^/options/([^/]+?)/exercise(?:/)?$",
+      "routeKeys": {
+        "nxtPid": "nxtPid"
+      },
+      "namedRegex": "^/options/(?<nxtPid>[^/]+?)/exercise(?:/)?$"
+    }
+  ],
+  "staticRoutes": [
+    {
+      "page": "/",
+      "regex": "^/(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/(?:/)?$"
+    },
+    {
+      "page": "/_global-error",
+      "regex": "^/_global\\-error(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/_global\\-error(?:/)?$"
+    },
+    {
+      "page": "/_not-found",
+      "regex": "^/_not\\-found(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/_not\\-found(?:/)?$"
+    },
+    {
+      "page": "/api/auth/stakeholder/login",
+      "regex": "^/api/auth/stakeholder/login(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/auth/stakeholder/login(?:/)?$"
+    },
+    {
+      "page": "/api/portal/exercise",
+      "regex": "^/api/portal/exercise(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/portal/exercise(?:/)?$"
+    },
+    {
+      "page": "/auth/stakeholder/login",
+      "regex": "^/auth/stakeholder/login(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/auth/stakeholder/login(?:/)?$"
+    },
+    {
+      "page": "/cap-table",
+      "regex": "^/cap\\-table(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/cap\\-table(?:/)?$"
+    },
+    {
+      "page": "/certificates",
+      "regex": "^/certificates(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/certificates(?:/)?$"
+    },
+    {
+      "page": "/certificates/new",
+      "regex": "^/certificates/new(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/certificates/new(?:/)?$"
+    },
+    {
+      "page": "/convertibles",
+      "regex": "^/convertibles(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/convertibles(?:/)?$"
+    },
+    {
+      "page": "/convertibles/new",
+      "regex": "^/convertibles/new(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/convertibles/new(?:/)?$"
+    },
+    {
+      "page": "/exercises",
+      "regex": "^/exercises(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/exercises(?:/)?$"
+    },
+    {
+      "page": "/options",
+      "regex": "^/options(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/options(?:/)?$"
+    },
+    {
+      "page": "/options/new",
+      "regex": "^/options/new(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/options/new(?:/)?$"
+    },
+    {
+      "page": "/portfolio",
+      "regex": "^/portfolio(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/portfolio(?:/)?$"
+    },
+    {
+      "page": "/settings",
+      "regex": "^/settings(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/settings(?:/)?$"
+    },
+    {
+      "page": "/stakeholders",
+      "regex": "^/stakeholders(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/stakeholders(?:/)?$"
+    }
+  ],
+  "dataRoutes": [],
+  "rsc": {
+    "header": "rsc",
+    "varyHeader": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch",
+    "prefetchHeader": "next-router-prefetch",
+    "didPostponeHeader": "x-nextjs-postponed",
+    "contentTypeHeader": "text/x-component",
+    "suffix": ".rsc",
+    "prefetchSegmentHeader": "next-router-segment-prefetch",
+    "prefetchSegmentSuffix": ".segment.rsc",
+    "prefetchSegmentDirSuffix": ".segments",
+    "clientParamParsing": false,
+    "dynamicRSCPrerender": false
+  },
+  "rewriteHeaders": {
+    "pathHeader": "x-nextjs-rewritten-path",
+    "queryHeader": "x-nextjs-rewritten-query"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "node": {
+    "6093ad5c5e46858a83c3fc7f610335cdcc40c3e712": {
+      "workers": {
+        "app/(admin)/certificates/new/page": {
+          "moduleId": 58649,
+          "async": true,
+          "exportedName": "createCertificate",
+          "filename": "src/app/(admin)/certificates/actions.ts"
+        }
+      },
+      "layer": {
+        "app/(admin)/certificates/new/page": "action-browser"
+      },
+      "exportedName": "createCertificate",
+      "filename": "src/app/(admin)/certificates/actions.ts"
+    },
+    "70431018d6fb193461e63524788a3220b5da11ca4b": {
+      "workers": {
+        "app/(admin)/certificates/new/page": {
+          "moduleId": 58649,
+          "async": true,
+          "exportedName": "updateCertificate",
+          "filename": "src/app/(admin)/certificates/actions.ts"
+        }
+      },
+      "layer": {
+        "app/(admin)/certificates/new/page": "action-browser"
+      },
+      "exportedName": "updateCertificate",
+      "filename": "src/app/(admin)/certificates/actions.ts"
+    }
+  },
+  "edge": {}
+}
