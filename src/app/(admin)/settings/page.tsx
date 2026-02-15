@@ -5,6 +5,8 @@ import { ShareClassList, type SerializedShareClass } from "./share-class-list";
 import { EquityPlanList, type SerializedEquityPlan } from "./equity-plan-list";
 import { Building2, Layers, Target } from "lucide-react";
 
+export const dynamic = "force-dynamic";
+
 async function getSettingsData() {
   const company = await prisma.company.findFirst({
     include: {

@@ -8,6 +8,8 @@ import { getVestingProgress } from "@/lib/vesting";
 import { ArrowLeft } from "lucide-react";
 import { ExerciseForm } from "./exercise-form";
 
+export const dynamic = "force-dynamic";
+
 async function getGrantForExercise(id: string) {
   const grant = await prisma.optionGrant.findUnique({
     where: { id },

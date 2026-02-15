@@ -8,6 +8,8 @@ import { formatCurrency, formatNumber, formatPercent } from "@/lib/utils";
 import { getVestingProgress } from "@/lib/vesting";
 import { calculateAccruedInterest, getTotalConvertibleAmount } from "@/lib/calculations";
 import { VestingProgressBar } from "@/components/vesting-progress-bar";
+
+export const dynamic = "force-dynamic";
 import { FileText, Award, Landmark, Building2 } from "lucide-react";
 
 async function getPortfolioData(stakeholderId: string) {

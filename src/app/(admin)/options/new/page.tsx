@@ -5,6 +5,8 @@ import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
 import { OptionForm } from "../option-form";
 
+export const dynamic = "force-dynamic";
+
 async function getFormData() {
   const company = await prisma.company.findFirst();
   if (!company) return null;

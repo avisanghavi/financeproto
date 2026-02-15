@@ -1,6 +1,8 @@
 import { prisma } from "@/lib/prisma";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+
+export const dynamic = "force-dynamic";
 import {
   getCapTableMetrics,
   getOwnershipByStakeholder,

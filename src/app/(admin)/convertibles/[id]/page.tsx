@@ -8,6 +8,8 @@ import { formatCurrency, formatDate, formatPercent } from "@/lib/utils";
 import { calculateAccruedInterest, getTotalConvertibleAmount } from "@/lib/calculations";
 import { ArrowLeft, Edit, User, Building2, DollarSign, FileText } from "lucide-react";
 
+export const dynamic = "force-dynamic";
+
 async function getConvertible(id: string) {
   const convertible = await prisma.convertible.findUnique({
     where: { id },

@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
 import { CertificateForm } from "../../certificate-form";
 
+export const dynamic = "force-dynamic";
+
 async function getFormData(id: string) {
   const certificate = await prisma.shareCertificate.findUnique({
     where: { id },

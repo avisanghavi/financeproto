@@ -140,7 +140,9 @@ return __turbopack_context__.a(async (__turbopack_handle_async_dependencies__, _
 
 __turbopack_context__.s([
     "default",
-    ()=>SettingsPage
+    ()=>SettingsPage,
+    "dynamic",
+    ()=>dynamic
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/rsc/react-jsx-dev-runtime.js [app-rsc] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/lib/prisma.ts [app-rsc] (ecmascript)");
@@ -162,6 +164,7 @@ var __turbopack_async_dependencies__ = __turbopack_handle_async_dependencies__([
 ;
 ;
 ;
+const dynamic = "force-dynamic";
 async function getSettingsData() {
     const company = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].company.findFirst({
         include: {
@@ -191,7 +194,7 @@ async function SettingsPage() {
                         children: "Company Settings"
                     }, void 0, false, {
                         fileName: "[project]/src/app/(admin)/settings/page.tsx",
-                        lineNumber: 29,
+                        lineNumber: 31,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -199,13 +202,13 @@ async function SettingsPage() {
                         children: "Manage your company information, share classes, and equity plans"
                     }, void 0, false, {
                         fileName: "[project]/src/app/(admin)/settings/page.tsx",
-                        lineNumber: 30,
+                        lineNumber: 32,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/(admin)/settings/page.tsx",
-                lineNumber: 28,
+                lineNumber: 30,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -218,7 +221,7 @@ async function SettingsPage() {
                                 className: "h-5 w-5 text-muted-foreground"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/(admin)/settings/page.tsx",
-                                lineNumber: 38,
+                                lineNumber: 40,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -226,26 +229,26 @@ async function SettingsPage() {
                                 children: "Company Information"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/(admin)/settings/page.tsx",
-                                lineNumber: 39,
+                                lineNumber: 41,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/(admin)/settings/page.tsx",
-                        lineNumber: 37,
+                        lineNumber: 39,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f28$admin$292f$settings$2f$company$2d$form$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["CompanyForm"], {
                         company: company ? (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$utils$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["serialize"])(company) : null
                     }, void 0, false, {
                         fileName: "[project]/src/app/(admin)/settings/page.tsx",
-                        lineNumber: 41,
+                        lineNumber: 43,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/(admin)/settings/page.tsx",
-                lineNumber: 36,
+                lineNumber: 38,
                 columnNumber: 7
             }, this),
             company && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["Fragment"], {
@@ -260,7 +263,7 @@ async function SettingsPage() {
                                         className: "h-5 w-5 text-muted-foreground"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/(admin)/settings/page.tsx",
-                                        lineNumber: 49,
+                                        lineNumber: 51,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -268,13 +271,13 @@ async function SettingsPage() {
                                         children: "Share Classes"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/(admin)/settings/page.tsx",
-                                        lineNumber: 50,
+                                        lineNumber: 52,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/(admin)/settings/page.tsx",
-                                lineNumber: 48,
+                                lineNumber: 50,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f28$admin$292f$settings$2f$share$2d$class$2d$list$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["ShareClassList"], {
@@ -282,13 +285,13 @@ async function SettingsPage() {
                                 companyId: company.id
                             }, void 0, false, {
                                 fileName: "[project]/src/app/(admin)/settings/page.tsx",
-                                lineNumber: 52,
+                                lineNumber: 54,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/(admin)/settings/page.tsx",
-                        lineNumber: 47,
+                        lineNumber: 49,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -301,7 +304,7 @@ async function SettingsPage() {
                                         className: "h-5 w-5 text-muted-foreground"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/(admin)/settings/page.tsx",
-                                        lineNumber: 61,
+                                        lineNumber: 63,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -309,13 +312,13 @@ async function SettingsPage() {
                                         children: "Equity Plans"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/(admin)/settings/page.tsx",
-                                        lineNumber: 62,
+                                        lineNumber: 64,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/(admin)/settings/page.tsx",
-                                lineNumber: 60,
+                                lineNumber: 62,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f28$admin$292f$settings$2f$equity$2d$plan$2d$list$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["EquityPlanList"], {
@@ -323,13 +326,13 @@ async function SettingsPage() {
                                 companyId: company.id
                             }, void 0, false, {
                                 fileName: "[project]/src/app/(admin)/settings/page.tsx",
-                                lineNumber: 64,
+                                lineNumber: 66,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/(admin)/settings/page.tsx",
-                        lineNumber: 59,
+                        lineNumber: 61,
                         columnNumber: 11
                     }, this)
                 ]
@@ -337,7 +340,7 @@ async function SettingsPage() {
         ]
     }, void 0, true, {
         fileName: "[project]/src/app/(admin)/settings/page.tsx",
-        lineNumber: 27,
+        lineNumber: 29,
         columnNumber: 5
     }, this);
 }

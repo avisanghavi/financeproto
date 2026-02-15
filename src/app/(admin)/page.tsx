@@ -1,6 +1,8 @@
 import { prisma } from "@/lib/prisma";
 import { redirect } from "next/navigation";
 import { getCapTableMetrics } from "@/lib/calculations";
+
+export const dynamic = "force-dynamic";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { formatCurrency, formatNumber, formatPercent } from "@/lib/utils";
 import Link from "next/link";

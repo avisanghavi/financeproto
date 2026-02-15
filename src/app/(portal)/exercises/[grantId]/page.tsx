@@ -9,6 +9,8 @@ import { getVestingProgress } from "@/lib/vesting";
 import { ArrowLeft } from "lucide-react";
 import { PortalExerciseForm } from "./portal-exercise-form";
 
+export const dynamic = "force-dynamic";
+
 async function getGrantForExercise(grantId: string, stakeholderId: string) {
   const grant = await prisma.optionGrant.findFirst({
     where: {

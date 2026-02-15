@@ -5,6 +5,8 @@ import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
 import { ConvertibleForm } from "../convertible-form";
 
+export const dynamic = "force-dynamic";
+
 async function getFormData() {
   const company = await prisma.company.findFirst();
   if (!company) return null;

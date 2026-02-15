@@ -7,6 +7,8 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { formatCurrency, formatNumber, formatDate } from "@/lib/utils";
 import { ArrowLeft, Edit, FileText, User, Building2, Receipt } from "lucide-react";
 
+export const dynamic = "force-dynamic";
+
 async function getCertificate(id: string) {
   const cert = await prisma.shareCertificate.findUnique({
     where: { id },
