@@ -19,7 +19,11 @@
   "/(portal)/portfolio/page": "app/(portal)/portfolio/page.js",
   "/_global-error/page": "app/_global-error/page.js",
   "/_not-found/page": "app/_not-found/page.js",
+  "/api/auth/login/route": "app/api/auth/login/route.js",
+  "/api/auth/logout/route": "app/api/auth/logout/route.js",
+  "/api/auth/setup/route": "app/api/auth/setup/route.js",
   "/api/auth/stakeholder/login/route": "app/api/auth/stakeholder/login/route.js",
   "/api/portal/exercise/route": "app/api/portal/exercise/route.js",
+  "/auth/login/page": "app/auth/login/page.js",
   "/auth/stakeholder/login/page": "app/auth/stakeholder/login/page.js"
 }

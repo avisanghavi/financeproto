@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { cn } from "@/lib/utils";
 import {
   LayoutDashboard,
@@ -12,6 +12,8 @@ import {
   Users,
   Settings,
   Building2,
+  LogOut,
+  User,
 } from "lucide-react";
 
 const navigation = [
@@ -27,8 +29,20 @@ const secondaryNavigation = [
   { name: "Company Settings", href: "/settings", icon: Building2 },
 ];
 
-export function AdminSidebar() {
+interface AdminSidebarProps {
+  userEmail?: string;
+  userName?: string | null;
+}
+
+export function AdminSidebar({ userEmail, userName }: AdminSidebarProps) {
   const pathname = usePathname();
+  const router = useRouter();
+
+  const handleLogout = async () => {
+    await fetch("/api/auth/logout", { method: "POST" });
+    router.push("/auth/login");
+    router.refresh();
+  };
 
   return (
     <div className="flex h-full w-64 flex-col bg-gray-900">
@@ -107,6 +121,30 @@ export function AdminSidebar() {
                 );
               })}
             </ul>
+
+            {/* User info and logout */}
+            {userEmail && (
+              <div className="mt-4 pt-4 border-t border-gray-700">
+                <div className="flex items-center gap-3 px-2 py-2">
+                  <div className="h-8 w-8 rounded-full bg-gray-700 flex items-center justify-center">
+                    <User className="h-4 w-4 text-gray-300" />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <p className="text-sm font-medium text-white truncate">
+                      {userName || userEmail.split("@")[0]}
+                    </p>
+                    <p className="text-xs text-gray-400 truncate">{userEmail}</p>
+                  </div>
+                </div>
+                <button
+                  onClick={handleLogout}
+                  className="mt-2 w-full flex items-center gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 text-gray-400 hover:bg-gray-800 hover:text-white"
+                >
+                  <LogOut className="h-5 w-5 shrink-0" />
+                  Sign out
+                </button>
+              </div>
+            )}
           </li>
         </ul>
       </nav>

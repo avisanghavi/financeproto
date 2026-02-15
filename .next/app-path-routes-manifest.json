@@ -19,7 +19,11 @@
   "/(portal)/portfolio/page": "/portfolio",
   "/_global-error/page": "/_global-error",
   "/_not-found/page": "/_not-found",
+  "/api/auth/login/route": "/api/auth/login",
+  "/api/auth/logout/route": "/api/auth/logout",
+  "/api/auth/setup/route": "/api/auth/setup",
   "/api/auth/stakeholder/login/route": "/api/auth/stakeholder/login",
   "/api/portal/exercise/route": "/api/portal/exercise",
+  "/auth/login/page": "/auth/login",
   "/auth/stakeholder/login/page": "/auth/stakeholder/login"
 }
