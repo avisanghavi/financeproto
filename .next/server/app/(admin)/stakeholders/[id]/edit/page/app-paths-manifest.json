@@ -1,0 +1,3 @@
+{
+  "/(admin)/stakeholders/[id]/edit/page": "app/(admin)/stakeholders/[id]/edit/page.js"
+}

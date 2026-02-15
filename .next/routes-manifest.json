@@ -68,6 +68,22 @@
         "nxtPid": "nxtPid"
       },
       "namedRegex": "^/options/(?<nxtPid>[^/]+?)/exercise(?:/)?$"
+    },
+    {
+      "page": "/stakeholders/[id]",
+      "regex": "^/stakeholders/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPid": "nxtPid"
+      },
+      "namedRegex": "^/stakeholders/(?<nxtPid>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/stakeholders/[id]/edit",
+      "regex": "^/stakeholders/([^/]+?)/edit(?:/)?$",
+      "routeKeys": {
+        "nxtPid": "nxtPid"
+      },
+      "namedRegex": "^/stakeholders/(?<nxtPid>[^/]+?)/edit(?:/)?$"
     }
   ],
   "staticRoutes": [
@@ -196,6 +212,12 @@
       "regex": "^/stakeholders(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/stakeholders(?:/)?$"
+    },
+    {
+      "page": "/stakeholders/new",
+      "regex": "^/stakeholders/new(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/stakeholders/new(?:/)?$"
     }
   ],
   "dataRoutes": [],

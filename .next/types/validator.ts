@@ -173,6 +173,33 @@ type RouteHandlerConfig<Route extends AppRouteHandlerRoutes = AppRouteHandlerRou
   type __Unused = __Check
 }
 
+// Validate ../../src/app/(admin)/stakeholders/[id]/edit/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/stakeholders/[id]/edit">> = Specific
+  const handler = {} as typeof import("../../src/app/(admin)/stakeholders/[id]/edit/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../src/app/(admin)/stakeholders/[id]/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/stakeholders/[id]">> = Specific
+  const handler = {} as typeof import("../../src/app/(admin)/stakeholders/[id]/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../src/app/(admin)/stakeholders/new/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/stakeholders/new">> = Specific
+  const handler = {} as typeof import("../../src/app/(admin)/stakeholders/new/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
 // Validate ../../src/app/(admin)/stakeholders/page.tsx
 {
   type __IsExpected<Specific extends AppPageConfig<"/stakeholders">> = Specific

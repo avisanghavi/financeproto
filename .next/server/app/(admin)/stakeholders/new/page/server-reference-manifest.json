@@ -1,0 +1,35 @@
+{
+  "node": {
+    "60052f4015a36bcdcded7a564a728882354e5a3e6d": {
+      "workers": {
+        "app/(admin)/stakeholders/new/page": {
+          "moduleId": 72243,
+          "async": true,
+          "exportedName": "createStakeholder",
+          "filename": "src/app/(admin)/stakeholders/actions.ts"
+        }
+      },
+      "layer": {
+        "app/(admin)/stakeholders/new/page": "action-browser"
+      },
+      "exportedName": "createStakeholder",
+      "filename": "src/app/(admin)/stakeholders/actions.ts"
+    },
+    "607ec0d706f006711626daf81fbfc131e2a247a5f0": {
+      "workers": {
+        "app/(admin)/stakeholders/new/page": {
+          "moduleId": 72243,
+          "async": true,
+          "exportedName": "updateStakeholder",
+          "filename": "src/app/(admin)/stakeholders/actions.ts"
+        }
+      },
+      "layer": {
+        "app/(admin)/stakeholders/new/page": "action-browser"
+      },
+      "exportedName": "updateStakeholder",
+      "filename": "src/app/(admin)/stakeholders/actions.ts"
+    }
+  },
+  "edge": {}
+}

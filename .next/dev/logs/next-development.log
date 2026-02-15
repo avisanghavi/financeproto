@@ -3043,3 +3043,13 @@
 [21:30:26.467] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
 [21:30:26.479] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
 [21:31:11.267] Server  LOG     ✓ Compiled in 33ms
+[24:33:39.226] Server  LOG     prisma:error "\nInvalid `__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__[\"prisma\"].company.findFirst()` invocation in\n/Users/jarvis/Desktop/BoardFinance/.next/dev/server/chunks/ssr/[root-of-the-server]__33f5236d._.js:489:162\n\n  486 ;\n  487 ;\n  488 async function getDashboardData() {\n→ 489     const company = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__[\"prisma\"].company.findFirst(\nCan't reach database server at db.wdoiyhqeldnrjtrlcjvw.supabase.co"
+[24:33:39.329] Server  ERROR   ⨯ PrismaClientKnownRequestError: 
+Invalid `{imported module ./src/lib/prisma.ts}["prisma"].company.findFirst()` invocation in
+/Users/jarvis/Desktop/BoardFinance/.next/dev/server/chunks/ssr/[root-of-the-server]__33f5236d._.js:489:162
+
+  486 ;
+  487 ;
+  488 async function getDashboardData() {
+→ 489     const company = await {imported module ./src/lib/prisma.ts}["prisma"].company.findFirst(
+Can't reach database server at db.wdoiyhqeldnrjtrlcjvw.supabase.co
